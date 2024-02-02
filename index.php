@@ -48,7 +48,7 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 </head>
 <body>
 
-	<article id="modalConfirm" style="display: none;">
+	<article id="modalConfirm" style="display: none;"  >
 		<h3 id="mcTitle" value="0" class="text-center">Please confirm process</h3>
 		<div class="container">
 
@@ -125,8 +125,16 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 				</div>
 			</div>
 
+			<div class="row pt-5">
+				<div class="col-10  offset-1 ">
+					<div class="alert alert-danger" role="alert">
+					Warning! This operation can't be undone.<br>
+					Please verify you have a good backup of the network!!!
+					</div>
+				</div>
+			</div>
 
-		<!-- </div> end container -->
+		</div> <!-- end container -->
 
 	</article>
 
