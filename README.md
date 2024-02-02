@@ -2,7 +2,7 @@
 
 [![pub package](https://img.shields.io/badge/PUB-1.0.0-blue)](https://github.com/LuisCarrizo/advanced-wp-multisite-cloner)
 
-A small but power web app, designed to clone sites from Multisite Wordpress Network
+A small but powerfull and super fast web app, designed to clone sites from Multisite Wordpress Network
 
 
 ## Features
@@ -19,7 +19,12 @@ A small but power web app, designed to clone sites from Multisite Wordpress Netw
 
 Install the files on a hidden folder o subdomain on your server.
 
-Run the app, and enjoy.
+Update 2 files, with your site's data:
+
+1) networks.php
+2) location.php
+
+Run the app, and enjoy!!!
 
 
 ## Examples
