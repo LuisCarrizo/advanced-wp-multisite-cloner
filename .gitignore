@@ -1,0 +1,5 @@
+# Miscellaneous
+*.zip
+*.log
+.mscFiles/
+.bak/
