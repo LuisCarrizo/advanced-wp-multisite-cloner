@@ -1,32 +1,26 @@
 # Advanced Wordpress Multisite Cloner
 
-[![pub package](https://img.shields.io/badge/PUB-1.0.0-blue)](https://pub.dev/packages/shared_preferences_mega)
+[![pub package](https://img.shields.io/badge/PUB-1.0.0-blue)](https://github.com/LuisCarrizo/advanced-wp-multisite-cloner)
 
-A library that provides a lot of aditional tools to Shared Preferences:
-    - an easy solution to create settings screens with simple and compound options (thanks to barnabasbartha /
-shared_preferences_settings )
+A small but power web app, designed to clone sites from Multisite Wordpress Network
 
-|             | Android | iOS   | Linux | macOS  | Web | Windows     |
-|-------------|---------|-------|-------|--------|-----|-------------|
-| **Support** | SDK 16+ | 11.0+ | Any   | 10.11+ | Any | Windows 10+ |
 
 ## Features
-  - Key-value pairs saved via Shared Preferences
-  - React style data retrieval
-  - Disable or hide widgets according to others' value
+  - this version only works with directory level Multisites (no domain level)
+  - Export sites
+  - Import sites 
+  - Clone sites on same or differtnt networks on same server
+  - Delete sites
+  
 
 ## Usage
 
 ### Getting started
 
-First, add `shared_preferences_mega` as a [dependency in your pubspec.yaml file](https://flutter.dev/platform-plugins/).
+Install the files on a hidden folder o subdomain on your server.
 
-If you're already using `shared_preferences`, **you should replace the dependency** with `shared_preferences_mega`.
+Run the app, and enjoy.
 
-```yaml
-dependencies:
-  shared_preferences_mega: ^1.0.0
-```
 
 ## Examples
 
@@ -41,10 +35,11 @@ dependencies:
 MIT License
 
 ## Donation
-If you would like to contribute to my work, you can [donate via PayPal](https://paypal.me/wikired ).
+If you would like to contribute to my work, you can [donate via PayPal](https://paypal.me/wikired )
+or [buy me a coffee](https://buymeacoffee.com/wikired ).
 
 ## Customizations
-Need customization for this library or a developer? Please contact me via email you can find on my profile.
+Need customization for this app or a developer? Please contact me via email you can find on my profile, or [visit my web ](https://wikired.com.ar )
 
-## Credits
-- Barnabás BARTHA (barnabasbartha/shared_preferences_settings)  
+
+ 
