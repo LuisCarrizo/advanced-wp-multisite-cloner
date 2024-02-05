@@ -36,12 +36,17 @@ $networks = array(
 		array(
 			'name'   => 'Wikired @work',
 			'url'    => 'http://wikired.net/',
-			'folder' => '/wpmain/',
+			'folder' => 'wpmain/',
 			'main'   => 'http://wikired.net/'),
 		array(
 			'name'   => 'CRP @work',
 			'url'    => 'http://crp.net/',
-			'folder' => '/wpcrp/',
+			'folder' => 'wpcrp/',
+			'main'   => 'http://wikired.net/'),
+		array(
+			'name'   => 'Test @work',
+			'url'    => 'http://wptest.net/',
+			'folder' => 'wptest/',
 			'main'   => 'http://wikired.net/'),
 	),
 );

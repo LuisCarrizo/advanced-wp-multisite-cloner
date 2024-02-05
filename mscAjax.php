@@ -276,6 +276,8 @@ function doDelete( $pp  ){
 function doExport( $pp , $isClone = false ) {
 	$rv=array();
 	try {
+		$aka = var_export($pp,true);
+		throw new Exception($aka);
 		// definiciones genericas
 		$stat = array(
 			'Export Init time: ' =>  _now()

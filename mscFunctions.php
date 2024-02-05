@@ -38,6 +38,8 @@ function getWpConfig($network , $fullData = false){
 			// lee el archivo  de configuracion de cada red
 			$netFolder = NETWORK_ROOT . $value['folder'] ;
 			$cf = $netFolder . 'wp-config.php';
+			// agregado el 2024-02-05 - verificar si es multisite
+			$multisite = false;
 			$data = file($cf, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
 			foreach ($data as $dValue) {
 				if (strpos($dValue, 'DB_NAME') !== false){
@@ -55,6 +57,9 @@ function getWpConfig($network , $fullData = false){
 				if (strpos($dValue, 'table_prefix') !== false){
 					$table_prefix =  _between ("'", "'",  _after ( "=", $dValue));
 				}
+				if (strpos($dValue, 'MULTISITE') !== false){
+					$multisite =  trim(_between (",", ")",  $dValue));
+				}
 			}
 			if ( empty($fullData) ){
 				$rv[$key]['dbData'] = array(
@@ -70,33 +75,41 @@ function getWpConfig($network , $fullData = false){
 			} else {
 				$network[$key]['table_prefix'] = $table_prefix;
 				$network[$key]['netFolder'] = $netFolder;
+				$network[$key]['multisite'] = $multisite;
 		
 				// abre una instancia de base de datos para cada red
 				$db = new wrDB($host, $user,$pass,$name) ;
-			
+
 				// lee los sitios de cada red
 				$sites = array();
+				// agregado el 2024-02-05
 				$table = $table_prefix . 'blogs';
-				$query = "SELECT * from $table where blog_id > 1";
-				$blogs = $db->get_results( $query , 0);
-				foreach ($blogs as $blog) {
-					// _debug($blog);
-					$blog_id = $blog['blog_id'];
-					// busca el nombre del sitio
-					$table2 = $table_prefix . $blog_id . '_options';
-					$query2 = "select * from $table2 where option_name = 'blogname'"; 
-					$option = $db->get_row( $query2 , 3);
-					$blog_name = $option['option_value'];
-					$sites[$blog_name] = $blog;
-					$sites[$blog_name]['name'] =  $blog_name;
-					// alimenta la matrix
-					$id = 'n' . $network[$key]['id'].'s'.$blog_id;
-					$siteMatrix[$id] = array(
-						'netID' => $network[$key]['id'],
-						'siteID' => $blog_id,
-						'siteName' => $blog_name,
-						
-					);
+				$tableExists = $db->table_exists($table);
+
+				if ($tableExists ){
+					// sites loop
+					$table = $table_prefix . 'blogs';
+					$query = "SELECT * from $table where blog_id > 1";
+					$blogs = $db->get_results( $query , 0);
+					foreach ($blogs as $blog) {
+						// _debug($blog);
+						$blog_id = $blog['blog_id'];
+						// busca el nombre del sitio
+						$table2 = $table_prefix . $blog_id . '_options';
+						$query2 = "select * from $table2 where option_name = 'blogname'"; 
+						$option = $db->get_row( $query2 , 3);
+						$blog_name = $option['option_value'];
+						$sites[$blog_name] = $blog;
+						$sites[$blog_name]['name'] =  $blog_name;
+						// alimenta la matrix
+						$id = 'n' . $network[$key]['id'].'s'.$blog_id;
+						$siteMatrix[$id] = array(
+							'netID' => $network[$key]['id'],
+							'siteID' => $blog_id,
+							'siteName' => $blog_name,
+							
+						);
+					}
 				}
 				$network[$key]['sites'] = $sites ;
 				// no hace falta guardar la db
@@ -104,6 +117,15 @@ function getWpConfig($network , $fullData = false){
 			}
 
 		}
+		// agregado el 2024-02-05
+		// se quitan las redes que no son multisite
+		// foreach ($network as $key => $net) {
+		// 	echo $key . _ff;
+		// 	if ( empty($net['multisite'])){
+		// 		unset($network['$key']);
+		// 		echo 'eliminado' . _ff;
+		// 	}
+		// }
 		if ( $fullData) {
 			$rv['network'] = $network;
 			$rv['siteMatrix'] = $siteMatrix;

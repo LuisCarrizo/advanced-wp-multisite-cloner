@@ -483,13 +483,13 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 			try {
 				showResult( 'wait' , 'cloning...');
 				// se validan los parametros
-				if ( 0 == $('#netOri option:selected').val() ){
+				if ( !$('#netOri option:selected').val() ){
 					throw 'No Source Network selected ';
 				}
-				if ( 0 == $('#siteOri option:selected').val() ){
+				if ( !$('#siteOri option:selected').val() ){
 					throw 'No Source Site selected ';
 				}
-				if ( 0 == $('#netDes option:selected').val() ){
+				if ( !$('#netDes option:selected').val() ){
 						throw 'No Destination Network selected ';
 				}
 				// prepara parametros
@@ -549,10 +549,10 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 			try {
 				showResult( 'wait' , 'exporting...');
 				// se validan los parametros
-				if ( 0 == $('#netOri option:selected').val() ){
+				if ( !$('#netOri option:selected').val() ){
 					throw 'No Source Network selected ';
 				}
-				if ( 0 == $('#siteOri option:selected').val() ){
+				if ( !$('#siteOri option:selected').val() ){
 					throw 'No Source Site selected ';
 				}
 				// prepara parametros
@@ -612,7 +612,7 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 				} else {
 					throw 'No file selected ';
 				}
-				if ( 0 == $('#netDes option:selected').val() ){
+				if ( !$('#netDes option:selected').val() ){
 					throw 'No Destination Network selected ';
 				}
 				
@@ -678,7 +678,7 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 					fileFullName =  'void';
 				}
 				console.log( 'fileID ' + fileID);
-				if ( 0 == $('#siteOri option:selected').val() ){
+				if ( !$('#siteOri option:selected').val() ){
 					throw 'No Source Site selected ';
 				}
 
@@ -807,7 +807,7 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 
 // _debug( $network['CRP']['sites'] , 'network');
 // _debug( $siteMatrix , 'sitematrix');
-// _debug( $network , 'network');
+//_debug( $network , 'network');
 
 // $wpconfig = getWpConfig($network);
 
