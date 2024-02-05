@@ -38,7 +38,7 @@ $fileList =  getFiles( MAIN_FOLDER . 'mscFiles' , 'zip');
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WPMu Copy</title>
+	<title>Adv.WP.Cloner</title>
 	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 	<meta charset="utf-8">
 	<meta name="author" content="Wikired Argentina">

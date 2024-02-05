@@ -1,19 +1,47 @@
 <?php 
-
 $networks = array(
 	'host' => array(
 		// host
-		array('name' => 'Main '  , 'url' => 'https://wikired.com.ar/'       , 'folder' => 'public_html/'),
-		array('name' => 'CRP'    , 'url' => 'https://crp.wikired.com.ar/'   , 'folder' => 'wr.crp/'     ),
+		array(
+			'name'   => 'Wikired @host ',
+			'url'    => 'https://wikired.com.ar/',
+			'folder' => 'public_html/',
+			'main'   => 'https://wikired.com.ar/'),
+		array(
+			'name'   => 'Demos @host',
+			'url'    => 'https://demo.wikired.com.ar/',
+			'folder' => 'wr.demo/',
+			'main'   => 'https://demo.wikired.com.ar'),
+		array(
+			'name'   => 'CRP @host',
+			'url'    => 'https://crp.wikired.com.ar/',
+			'folder' => 'wr.crp/',
+			'main'   => 'https://crp.wikired.com.ar'),
 	),
 	'home' => array(
-		// localhost
-		array('name' => 'Wikired' , 'url' => 'http://wikired.net/'          , 'folder' => 'wp_wr/'  ),
-		array('name' => 'CRP'     , 'url' => 'http://crp.net/'  			, 'folder' => 'wp_crp/' ),	
+		// localhost at home
+		array(
+			'name'   => 'Wikired @home',
+			'url'    => 'http://wikired.net/',
+			'folder' => 'wp_wr/',
+			'main'   => 'http://wikired.net/'),
+		array(
+			'name'   => 'CRP @home',
+			'url'    => 'http://crp.net/',
+			'folder' => 'wp_crp/',
+			'main'   => 'http://wikired.net/'),
 	),
-	'ofi' => array(
-		// localhost
-		array('name' => 'Wikired'  , 'url' => 'http://wikired.net/'         , 'folder' => '/wpmain/'  ),
-		array('name' => 'CRP'      , 'url' => 'http://crp.net/'  			, 'folder' => '/wpcrp/' ),	
+	'work' => array(
+		// localhost at work
+		array(
+			'name'   => 'Wikired @work',
+			'url'    => 'http://wikired.net/',
+			'folder' => '/wpmain/',
+			'main'   => 'http://wikired.net/'),
+		array(
+			'name'   => 'CRP @work',
+			'url'    => 'http://crp.net/',
+			'folder' => '/wpcrp/',
+			'main'   => 'http://wikired.net/'),
 	),
 );
