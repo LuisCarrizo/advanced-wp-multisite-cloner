@@ -1,7 +1,8 @@
 # Miscellaneous
 *.zip
 *.log
-.mscFiles/
-.bak/
+mscFiles/
+bak/
 void.php
-
+location.php
+networks.php
