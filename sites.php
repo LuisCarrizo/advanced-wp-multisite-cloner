@@ -100,10 +100,17 @@ require __DIR__ . '/siteOptions.php';
                     }
                     // END main loop
 
+                    // agregado el 2024-02-06 - multisite cloner
+                    echo '<tr>' . "\n";
+                    echo '<th scope="row"  class="text-center">Multi Site</td>' . "\n";
+                    echo '<td class="text-center">'. "\n";
+                    echo '<a href="./msc.php" target="_blank" ';
+                    echo ' title="Adv. Cloner" class="p-2" >' . "\n";
+                    echo '<i class="fas fa-clone fa-lg"></i>'  . "\n";
+                    echo '</td >'. "\n";
+                    echo '</tr>' . "\n";
 
-
-
-
+                    // END table
                     echo '</table>';
                     // END sites loop
                     echo '</div>' ;
