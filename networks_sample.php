@@ -50,3 +50,9 @@ $networks = array(
 			'main'   => 'http://wikired.net/'),
 	),
 );
+
+$awpmsc = array(
+	'host'	=> 'https://adminwp.wikired.com.ar/msc.php',
+	'home'	=> 'http://crp.net/@dm1n/advanced-wp-multisite-cloner/msc.php',
+	'work'	=> 'http://crp.net/@dm1n/advanced-wp-multisite-cloner/msc.php'
+);

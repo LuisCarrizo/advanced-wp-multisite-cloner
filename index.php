@@ -104,7 +104,7 @@ require __DIR__ . '/siteOptions.php';
                     echo '<tr>' . "\n";
                     echo '<th scope="row"  class="text-center">Multi Site</td>' . "\n";
                     echo '<td class="text-center">'. "\n";
-                    echo '<a href="./msc.php" target="_blank" ';
+                    echo '<a href="' .  $awpmsc[$location]    . '" target="_blank" ';
                     echo ' title="Adv. Cloner" class="p-2" >' . "\n";
                     echo '<i class="fas fa-clone fa-lg"></i>'  . "\n";
                     echo '</td >'. "\n";
@@ -120,6 +120,7 @@ require __DIR__ . '/siteOptions.php';
         </div>
     </main> 
 </body>
+
 <footer class="js_scripts">
     <script src="https://cdn.wikired.com.ar/jquery/jquery.min.js"></script>
 	<script src="https://cdn.wikired.com.ar/underscore/underscore-min.js"></script>
@@ -127,7 +128,5 @@ require __DIR__ . '/siteOptions.php';
 	<script src="https://kit.fontawesome.com/51c486d49e.js" crossorigin="anonymous"></script>
 	<script src="https://cdn.wikired.com.ar/utils/jquery.blockUI.js"></script>
 </footer>
-
-
 
 </html>

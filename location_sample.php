@@ -7,4 +7,7 @@ if ( !defined('MAIN_FOLDER' ) ){
 if ( !defined('NETWORK_ROOT')){
     define('NETWORK_ROOT' ,dirname(__DIR__, 3) . '/');
 }
-// echo NETWORK_ROOT;
+if ( $_SERVER['REQUEST_METHOD'] == 'GET' && !empty ($_GET) && array_key_exists('show' , $_GET)) {
+    echo 'Main Folder = ' . MAIN_FOLDER . '  /  Network Root = ' . NETWORK_ROOT;
+    die;
+}
